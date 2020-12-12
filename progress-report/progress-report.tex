@@ -1,11 +1,127 @@
 \documentclass[a4paper,fleqn,twoside,12pt]{article}
 
+\documentclass[12pt,a4paper,twoside,fleqn]{report}
+
+\usepackage{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[explicit]{titlesec}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{array, booktabs}
+\usepackage{colortbl}
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\usepackage[strict]{changepage}
+\usepackage{graphbox}
+\usepackage{prerex}
+\usepackage{forest}
+\usepackage{multicol}
+\usepackage{natbib}
+
+% Minted -------------------------------
+
+\usepackage{minted}
+\usepackage[
+backgroundcolor = gray!5
+, hidealllines=true
+]{mdframed}
+
+\surroundwithmdframed{minted}
+\usemintedstyle{lovelace}
+
+\setminted[text]{fontsize=\small}
+\setminted[java]{fontsize=\small}
+\setminted[sql]{fontsize=\small}
+\newcommand{\haskellIn}[1]{\mintinline[fontsize=\small]{haskell}{#1}}
+\newcommand{\bashIn}[1]{\mintinline[fontsize=\small]{bash}{#1}}
+
+% Tikz -------------------------------
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\tikzset{
+	treenode/.style = {align=center, inner sep=0pt, text centered,
+		font=\sffamily},
+	arn_n/.style = {treenode, circle, white, font=\sffamily\bfseries, draw=black,
+		fill=black, text width=1.5em},
+	arn_r/.style = {treenode, circle, red, draw=red,
+		text width=1.5em, very thick},
+	arn_x/.style = {treenode, circle, draw=white,
+		minimum width=1.5em, minimum height=1.5em},
+	cls/.style = { treenode, rectangle, red, draw=red,
+		text width=1.5em, very thick, minimum width=1.5em, minimum height=1.5em }
+}
+
+% UK English -------------------------------
+\usepackage[UKenglish]{babel}
+\usepackage[UKenglish]{isodate}
+
+% Hyperref -------------------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    unicode=false
+}
+
+% cleveref
+\usepackage[nameinlink]{cleveref}
+
+\crefname{figure}{figure}{figures} % cleveref by default has `fig.'
+\Crefname{figure}{Figure}{Figures}
+
+\crefname{section}{section}{sections} % cleveref by default has `fig.'
+\Crefname{section}{Section}{Sections}
+
+% Fonts -------------------------------
+
+% Palatino (font)
+\usepackage{mathpazo}
+\linespread{1.05}         % Palatino needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+% some format settings
+% for hard-bound final submission, use:
+%\setlength{\oddsidemargin}{4.6mm}     % 30 mm left margin - 1 in
+% for soft-bound version and techreport, use instead:
+\setlength{\oddsidemargin}{-0.4mm}    % 25 mm left margin - 1 in
+\setlength{\evensidemargin}{-0.4mm}
+\setlength{\topmargin}{-5.4mm}        % 20 mm top margin - 1 in
+\setlength{\textwidth}{160mm}         % 20/25 mm right margin
+\setlength{\textheight}{237mm}        % 20 mm bottom margin
+\setlength{\headheight}{5mm}
+\setlength{\headsep}{5mm}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{\medskipamount}
+\renewcommand\baselinestretch{1.2} % thesis format (not needed for techreport)
+% don't let large figures hijack entire pages
+\renewcommand\topfraction{.9}
+\renewcommand\textfraction{.1}
+\renewcommand\floatpagefraction{.8}
+
+
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = tt* }
+
+\author{Michael B. Gale}
+
+
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+
 %%%%%%%%%%%%%%%%%%%%
 
 \input{../common/common.tex}
 \input{../common/project.tex}
 
-\assignment{Progress report}
+\assignment{Subtitle}
 
 %%%%%%%%%%%%%%%%%%%%
 
@@ -30,6 +146,7 @@
 
 \pagestyle{plain}
 \input{introduction.tex}
+\input{timeline.tex}
 \input{background.tex}
 \input{progress.tex}
 \input{project-management.tex}
