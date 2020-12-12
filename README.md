@@ -9,9 +9,9 @@ It contains:
 4. An example timeline
 
 To generate the pdf similar to the example please use:
--`pdflatex [-shell-escape] progress-report.tex`
--`bibtex progress-report.aux`
--`pdflatex [-shell-escape] progress-report.tex`
--`pdflatex [-shell-escape] progress-report.tex`
+1. `pdflatex [-shell-escape] progress-report.tex`
+2. `bibtex progress-report.aux`
+3. `pdflatex [-shell-escape] progress-report.tex`
+4. `pdflatex [-shell-escape] progress-report.tex`
 
 `-shell-escape` is used if the document contains code
