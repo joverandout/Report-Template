@@ -1,6 +1,6 @@
 # Academic Report Template
 
-This repository contains the source code for a template style academic report (forked from Michae Gale's CS310 report repository and combined with elements of his haskell guide).
+This repository contains the source code for a template style academic report (forked from Michael Gale's CS310 report repository and combined with elements of his haskell guide).
 
 It contains:
 1. Automatic code highlighting
